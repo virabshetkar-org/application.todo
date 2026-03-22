@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "publish:api",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["publish", "-c", "Debug"],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "compose:up:api",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "up", "-d"],
+      "problemMatcher": []
+    },
+    {
+      "label": "debug:start:api",
+      "dependsOn": ["publish:api", "compose:up:api", "compose:wait:api"],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "debug:stop",
+      "type": "shell",
+      "command": "docker compose down"
+    },
+    {
+      "label": "compose:wait:api",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "until [ \"$(docker compose ps -q todo-service)\" != \"\" ]; do sleep 1; done"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

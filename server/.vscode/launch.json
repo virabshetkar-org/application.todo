@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Attach to Container",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickRemoteProcess}",
+            "preLaunchTask": "debug:start:api",
+            "postDebugTask": "debug:stop",
+            "pipeTransport": {
+                "pipeProgram": "docker",
+                "pipeArgs": [
+                    "compose",
+                    "exec",
+                    "-i",
+                    "todo-service"
+                ],
+                "debuggerPath": "/vsdbg/vsdbg",
+                "pipeCwd": "${workspaceFolder}",
+                "quoteArgs": false
+            }
+        },
+    ]
+}
