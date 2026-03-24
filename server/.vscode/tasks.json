@@ -12,7 +12,7 @@
       "label": "compose:up:api",
       "type": "shell",
       "command": "docker",
-      "args": ["compose", "up", "-d"],
+      "args": ["compose", "-f", "compose.local.yml", "up", "-d"],
       "problemMatcher": []
     },
     {

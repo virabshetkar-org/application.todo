@@ -1,0 +1,10 @@
+services:
+  todo-service:
+    image: virabshetkar/todo-service:latest
+    container_name: todo-service
+    build:
+      context: .
+    environment:
+      - ASPNETCORE_URLS=http://+:8080 # '+' is required for host binding 
+    extra_hosts:
+      - host.docker.internal:host-gateway # Required for linux based systems not running docker desktop
