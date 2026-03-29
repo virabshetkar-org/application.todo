@@ -1,0 +1,13 @@
+name: Angular Build
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: virabshetkar-org/pipeline-templates/.github/workflows/main.yml@main
+        with:
+          base_href: /todo/
+          artifact_name: todo
+  
