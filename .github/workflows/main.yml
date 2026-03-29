@@ -4,10 +4,8 @@ on: workflow_dispatch
 
 jobs:
   build:
-    runs-on: self-hosted
-    steps:
-      - uses: virabshetkar-org/pipeline-templates/.github/workflows/main.yml@main
-        with:
-          base_href: /todo/
-          artifact_name: todo
+    uses: virabshetkar-org/pipeline-templates/.github/workflows/main.yml@main
+    with:
+      artifact_name: todo
+      base_href: /todo-client/
   
