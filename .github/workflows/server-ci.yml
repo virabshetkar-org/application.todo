@@ -1,0 +1,11 @@
+name: Server CI
+run-name: ${{github.ref}} Server
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: [self-hosted, build]
+    steps:
+      - name: Hello World
+        run: echo Hello World!
