@@ -7,5 +7,10 @@ jobs:
   build:
     runs-on: [self-hosted, build]
     steps:
-      - name: Hello World
-        run: echo Hello World!
+      - name: Clone repo
+        uses: actions/checkout@v7
+        with:
+          path: application
+      - name: Docker build
+        run: docker build -t virabshetkar/todo-service:${{github.ref}} .
+        working-directory: application/server
