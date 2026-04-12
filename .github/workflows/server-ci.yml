@@ -12,5 +12,5 @@ jobs:
         with:
           path: application
       - name: Docker build & push
-        run: docker buildx build --builder build-cluster -t virabshetkar/todo-service:${{github.sha}} --push .
+        run: docker buildx build --builder build-cluster --platform linux/amd64,linux/arm64 -t virabshetkar/todo-service:${{github.sha}} --push .
         working-directory: application/server
