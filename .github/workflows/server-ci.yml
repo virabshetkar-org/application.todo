@@ -14,3 +14,5 @@ jobs:
       - name: Docker build
         run: docker buildx build -t virabshetkar/todo-service:${{github.sha}} .
         working-directory: application/server
+      - name: Docker push
+        run: docker push virabshetkar/todo-service:${{github.sha}}
