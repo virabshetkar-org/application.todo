@@ -12,5 +12,5 @@ jobs:
         with:
           path: application
       - name: Docker build
-        run: docker build -t virabshetkar/todo-service:${{github.ref}} .
+        run: docker buildx build -t virabshetkar/todo-service:${{github.sha}} .
         working-directory: application/server
