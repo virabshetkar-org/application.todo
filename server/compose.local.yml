@@ -9,8 +9,8 @@ services:
       target: debug
     environment:
       - ASPNETCORE_URLS=http://+:8080 # '+' is required for host binding 
-      - ASPNETCORE_ENVIRONMENT=Development
-      - USE_REMOTE_CONFIG=true
+      - ASPNETCORE_ENVIRONMENT=Local
+      - USE_REMOTE_CONFIG=false
       - REMOTE_CONFIG_URL=http://reverse-proxy/config/services/todo-service/ # Trailing slash is required
       - WAIT_FOR_DEBUGGER=true # Required when debugging else turn this off 
     ports:

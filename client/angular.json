@@ -126,7 +126,8 @@
 							"buildTarget": "todo-client:esbuild:production"
 						},
 						"development": {
-							"buildTarget": "todo-client:esbuild:development"
+							"buildTarget": "todo-client:esbuild:development",
+							"proxyConfig": "proxy.conf.json"
 						}
 					},
 					"defaultConfiguration": "development",

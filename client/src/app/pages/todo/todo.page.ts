@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ConfigurationService } from '../../shared/services/configuration.service';
 
 @Component({
   selector: 'app-todo',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './todo.page.css',
 })
 export class TodoPage {
+  readonly config = inject(ConfigurationService);
 
+  readonly frontendConfig$ = this.config.getFrontendManifest();
+  readonly backendConfig$ = this.config.getBackendConfig();
 }
