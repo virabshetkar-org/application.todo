@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ConfigurationService } from '../../shared/services/configuration.service';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-todo',
-  imports: [],
+  imports: [AsyncPipe, JsonPipe],
   templateUrl: './todo.page.html',
   styleUrl: './todo.page.css',
 })
