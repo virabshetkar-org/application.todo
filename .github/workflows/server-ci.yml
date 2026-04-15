@@ -1,7 +1,13 @@
 name: Server CI
 run-name: ${{github.sha}} - Server
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'server/**'
 
 jobs:
   build:
