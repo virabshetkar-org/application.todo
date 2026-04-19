@@ -11,7 +11,8 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, build]
+    runs-on: 
+      group: Build
     steps:
       - name: Clone repo
         uses: actions/checkout@v6
