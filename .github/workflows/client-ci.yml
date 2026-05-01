@@ -19,5 +19,7 @@ jobs:
     steps:
       - name: Build and publish client artifact
         uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build/action.yml@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           commitId: ${{ inputs.commitId || github.sha }}
