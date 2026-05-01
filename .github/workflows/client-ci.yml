@@ -1,0 +1,23 @@
+name: Build Angular Client
+
+run-name: Angular Build - ${{github.sha}}
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      commitId: 
+        type: string
+        required: false
+
+jobs:
+  build:
+    runs-on: [self-hosted, build]
+    steps:
+      - name: Build and publish client artifact
+        uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build/action.yml@latest
+        with:
+          commitId: ${{ inputs.commitId || github.sha }}
