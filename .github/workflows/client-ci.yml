@@ -18,6 +18,6 @@ jobs:
     runs-on: [self-hosted, build]
     steps:
       - name: Build and publish client artifact
-        uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build/action.yml@latest
+        uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build/action.yml@main
         with:
           commitId: ${{ inputs.commitId || github.sha }}
