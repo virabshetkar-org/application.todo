@@ -18,7 +18,7 @@ jobs:
     runs-on: [self-hosted, build]
     steps:
       - name: Build and publish client artifact
-        uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build/action.yml@main
+        uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
