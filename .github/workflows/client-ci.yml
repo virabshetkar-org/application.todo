@@ -20,6 +20,6 @@ jobs:
       - name: Build and publish client artifact
         uses: virabshetkar-org/pipeline-templates/.github/actions/angular-mfe-build@main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           commitId: ${{ inputs.commitId || github.sha }}
