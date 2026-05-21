@@ -2,22 +2,15 @@ name: Server CI
 run-name: ${{github.sha}} - Server
 
 on: 
-  workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - 'server/**'
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: 
-      group: Build
-    steps:
-      - name: Clone repo
-        uses: actions/checkout@v6
-        with:
-          path: application
-      - name: Docker build & push
-        run: docker buildx build --builder build-cluster --platform linux/amd64,linux/arm64 -t virabshetkar/todo-service:${{github.sha}} --push .
-        working-directory: application/server
+    uses: virabshetkar-org/pipeline-templates/.github/workflows/server-build.yml@main
+    with:
+      name: todo-service
