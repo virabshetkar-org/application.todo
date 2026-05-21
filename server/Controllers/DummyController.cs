@@ -9,6 +9,6 @@ public class DummyController : ControllerBase
     [HttpGet(Name = "HelloWorld")]
     public string Get()
     {
-        return "Hello, World!";
+        return "Hello, World!!!";
     }
 }
